@@ -19,10 +19,10 @@ filtered_vcf="${output_dir}/filtered.vcf"
 ${gatk_path} VariantFiltration \
   -R "${reference}" \
   -V "${input_vcf}" \
-  --filter-expression "QUAL < 30.0" \
+  --filter-expression "QUAL < 30.0" \ 
   --filter-name "LowQual" \
   -O "${filtered_vcf}"
-
+#you could also filter with more constraints: --filter-expression "QUAL < 30.0 || INFO/GENE_NAME == 'CLP1' || INFO/CLIN_SIG =~ 'pathogenic' || INFO/DB = 'OMIM'" \
 # Step 7: Variant Annotation and Post-processing
 normalized_vcf="${output_dir}/normalized.vcf"
 annotated_vcf="${output_dir}/annotated.vcf"
