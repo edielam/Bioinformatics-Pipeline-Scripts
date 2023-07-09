@@ -17,6 +17,7 @@ To get started with the genome analysis pipeline, follow these instructions:
 
 1. Clone this repository: git clone https://github.com/edielam/Genome-Analysis-Pipeline.git
 
+
 2. Install the required dependencies (see the [Dependencies](#dependencies) section for details).
 
 3. Prepare your input data, including raw sequencing reads, reference genome, and known variant sites.
@@ -44,31 +45,26 @@ Ensure that these dependencies are installed and accessible in your environment 
 
 The pipeline is divided into several steps, each implemented in a separate script. Follow the instructions in each script to perform the specific analysis step.
 
-1. QC Analysis: Run `qc_analysis.sh` to perform quality control analysis on raw sequence data.
+1. QC Analysis, Alignment, and Mark Duplicates: Run `qc-analysis_alignment_and_markduplicates.sh` to perform quality control analysis, read alignment, and duplicate marking in a single step.
 
-2. Alignment and Mark Duplicates: Execute `alignment_and_markduplicates.sh` to align reads, perform sorting, and mark duplicates.
+2. BQSR and Variant Calling: Execute `bqsr_and_variant-calling.sh` to perform Base Quality Score Recalibration (BQSR) and variant calling using GATK4's HaplotypeCaller.
 
-3. BQSR: Run `bqsr.sh` to perform Base Quality Score Recalibration (BQSR) on aligned BAM files.
+3. Variant Filtering and Annotation: Use `variant-filtering-and_annotation.sh` to filter variant calls based on quality, coverage, and other criteria, and annotate the variants using Variant Effect Predictor (VEP).
 
-4. Variant Calling: Execute `variant_calling.sh` to perform variant calling using GATK4's HaplotypeCaller.
+4. Functional Analysis: Utilize `functional_analysis.py` to perform functional analysis, including gene prioritization, pathway enrichment, visualization of variants, and protein sequence generation.
 
-5. Variant Filtering: Use `variant_filtering.sh` to filter variant calls based on quality, coverage, and other criteria.
-
-6. Variant Annotation: Run `variant_annotation.sh` to annotate variants using Variant Effect Predictor (VEP) and generate VEP output.
-
-7. Functional Analysis: Utilize `functional_analysis.py` to perform functional analysis, including gene prioritization, pathway enrichment, and protein structure analysis.
+5. Protein Sequence Prediction and Visualization: The additional Python files `visualization_of_variants.py` and `protein_sequence_generation.py` have been included to take care of other specific tasks. Visualization for reporting findings. Sequence Prediction as a prior step to functional analysis. 
 
 Refer to the individual scripts and their respective README files for detailed instructions on usage, inputs, and outputs.
 
 ## Scripts
 
-- `qc_analysis.sh`: Script for performing quality control analysis on raw sequence data.
-- `alignment_and_markduplicates.sh`: Script for aligning reads, performing sorting, and marking duplicates.
-- `bqsr.sh`: Script for performing Base Quality Score Recalibration (BQSR) on aligned BAM files.
-- `variant_calling.sh`: Script for variant calling using GATK4's HaplotypeCaller.
-- `variant_filtering.sh`: Script for filtering variant calls based on quality, coverage, and other criteria.
-- `variant_annotation.sh`: Script for annotating variants using Variant Effect Predictor (VEP) and generating VEP output.
-- `functional_analysis.py`: Python script for performing functional analysis, including gene prioritization, pathway enrichment, and protein structure analysis.
+- `qc-analysis_alignment_and_markduplicates.sh`: Script for performing quality control analysis, alignment, and marking duplicates.
+- `bqsr_and_variant-calling.sh`: Script for performing Base Quality Score Recalibration (BQSR) and variant calling.
+- `variant-filtering-and_annotation.sh`: Script for filtering variant calls based on quality, coverage, and other criteria, and annotating variants using VEP.
+- `functional_analysis.py`: Python script for performing functional analysis, including gene prioritization, pathway enrichment, visualization of variants, and protein sequence generation.
+- `visualization_of_variants.py`: Python script for generating visualizations of variants, such as bar charts and network plots, using annotated variant data.
+- `protein_sequence_generation.py`: Python script for generating protein sequences incorporating gene variants using Biopython.
 
 ## Contributing
 
