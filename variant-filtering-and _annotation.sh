@@ -40,8 +40,7 @@ ${bcftools_path} index "${compressed_vcf}"
 
 
 # Convert VCF to CSV using bcftools
-input_vcf="${output_dir}/annotated_variants.vcf"
+# Convert VCF to CSV using bcftools
 output_csv="${output_dir}/annotated_variants.csv"
 
-bcftools query -f '%CHROM\t%POS\t%REF\t%ALT\t%INFO/GENE\t%INFO/VARIANT_TYPE\t%INFO/CONSEQUENCE\t%INFO/CLINICAL_SIGNIFICANCE\n' ${input_vcf} > ${output_csv}
-
+bcftools query -f '%CHROM\t%POS\t%REF\t%ALT\t%INFO/GENE\t%INFO/VARIANT_TYPE\t%INFO/CONSEQUENCE\t%INFO/CLINICAL_SIGNIFICANCE\n' "${annotated_vcf}" > "${output_csv}"
