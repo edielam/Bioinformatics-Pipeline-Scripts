@@ -51,9 +51,10 @@ The pipeline is divided into several steps, each implemented in a separate scrip
 
 3. Variant Filtering and Annotation: Use `variant-filtering-and_annotation.sh` to filter variant calls based on quality, coverage, and other criteria, and annotate the variants using Variant Effect Predictor (VEP).
 
-4. Functional Analysis: Utilize `functional_analysis.py` to perform functional analysis, including gene prioritization, pathway enrichment, visualization of variants, and protein sequence generation.
+4. Functional Analysis: Utilize `functional_analysis.py` to perform functional analysis, including gene prioritization and pathway enrichment. Use `protein_sequence_generation.py` for protein sequence generation.
 
 5. Visualization: Use `visualization_of_variants.py` for generating visuals to be included in your report.
+
 Refer to the individual scripts and their respective README files for detailed instructions on usage, inputs, and outputs.
 
 ## Scripts
