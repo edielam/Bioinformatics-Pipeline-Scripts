@@ -15,7 +15,7 @@ This repository contains scripts and tools for analyzing whole genome sequencing
 
 To get started with the genome analysis pipeline, follow these instructions:
 
-1. Clone this repository: git clone https://github.com/edielam/Bioinformatics-Pipeline-Scripts.git
+1. Clone this repository: git clone https://github.com/edielam/Genome-Analysis-Pipeline.git
 
 2. Install the required dependencies (see the [Dependencies](#dependencies) section for details).
 
