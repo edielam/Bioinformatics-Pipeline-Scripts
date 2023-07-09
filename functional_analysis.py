@@ -1,3 +1,4 @@
+# Gene Prioritization and Variant Filtering:
 import pandas as pd
 
 # Load the annotated variant data into a DataFrame
@@ -12,14 +13,17 @@ filtered_df = filtered_df[(filtered_df['VARIANT_TYPE'] == 'SNV') &
                           (filtered_df['CONSEQUENCE'] == 'MISSENSE') &
                           (filtered_df['CLINICAL_SIGNIFICANCE'] != 'BENIGN')]
 
-# Assuming you have installed the CADD tool and downloaded the CADD data file
 
+# Functional Prediction:
+# Assuming you have installed the CADD tool and downloaded the CADD data file
 # Load the CADD data file (CADD scores)
 cadd_data = pd.read_csv('path/to/CADD_scores.tsv', sep='\t')
 
 # Merge CADD scores with the filtered variant data
 filtered_df = pd.merge(filtered_df, cadd_data, on=['CHROM', 'POS', 'REF', 'ALT'], how='left')
 
+
+#Pathway and Gene Set Enrichment Analysis:
 import gseapy
 
 # Extract the gene symbols from the filtered DataFrame
@@ -33,6 +37,7 @@ enrichment_results = gseapy.gprofiler(gene_list=genes, organism='hsapiens',
 enriched_pathways = enrichment_results.results.sort_values(by='p_value').head(10)
 
 
+#Protein Structure Analysis:
 import py3Dmol
 
 # Assuming you have installed the py3Dmol library and obtained the protein structure file (PDB format)
