@@ -39,6 +39,3 @@ The script will generate the following output files in the specified `output_dir
 - `recalibrated.bam`: BAM file after Base Quality Score Recalibration.
 - `output.vcf`: Variant Calling Format (VCF) file containing the called variants.
 
-## Additional Steps
-
-You can include additional steps for variant filtering and annotation after variant calling by modifying the script accordingly. Refer to the GATK4 documentation or other tools for further analysis and annotation of the VCF file.
