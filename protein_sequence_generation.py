@@ -1,8 +1,10 @@
 from Bio import SeqIO
 from Bio.Seq import Seq
 from Bio.Alphabet import IUPAC
+import pandas as pd
 
 # Load the gene variant annotation data into a DataFrame (assuming it's already loaded)
+variant_df = pd.read_csv('annotated_variants.csv', sep='\t')
 
 # Function to generate mutated protein sequence
 def generate_mutated_protein_sequence(transcript_sequence, variant_position, variant_aa):
