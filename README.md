@@ -53,8 +53,7 @@ The pipeline is divided into several steps, each implemented in a separate scrip
 
 4. Functional Analysis: Utilize `functional_analysis.py` to perform functional analysis, including gene prioritization, pathway enrichment, visualization of variants, and protein sequence generation.
 
-5. Protein Sequence Prediction and Visualization: The additional Python files `visualization_of_variants.py` and `protein_sequence_generation.py` have been included to take care of other specific tasks. Visualization for reporting findings. Sequence Prediction as a prior step to functional analysis. 
-
+5. Visualization: Use `visualization_of_variants.py` for generating visuals to be included in your report.
 Refer to the individual scripts and their respective README files for detailed instructions on usage, inputs, and outputs.
 
 ## Scripts
